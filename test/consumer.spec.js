@@ -10,8 +10,8 @@ chai.use(chaiAsPromised)
 
 describe('Pact', () => {
   const provider = pact({
-    consumer: 'Matching Service',
-    provider: 'Animal Profile Service',
+    consumer: 'Demo Matching Service V1',
+    provider: 'Demo Animal Profile Service V1',
     port: MOCK_SERVER_PORT,
     log: path.resolve(process.cwd(), 'logs', 'mockserver-integration.log'),
     dir: path.resolve(process.cwd(), 'pacts'),
