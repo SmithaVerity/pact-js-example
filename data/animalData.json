@@ -1,7 +1,7 @@
 [{
   "first_name": "Billy",
   "last_name": "Goat",
-  "animal": "goat",
+  "animal_name": "goat",
   "age":  21,
   "gender": "M",
   "location": {
@@ -21,7 +21,7 @@
 },
 {
   "first_name": "Nanny",
-  "animal": "goat",
+  "animal_name": "goat",
   "last_name": "Doe",
   "age":  27,
   "gender": "F",
@@ -42,7 +42,7 @@
 {
   "first_name": "Simba",
   "last_name": "Cantwaittobeking",
-  "animal": "lion",
+  "animal_name": "lion",
   "age":  4,
   "gender": "M",
   "location": {
