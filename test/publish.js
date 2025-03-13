@@ -1,10 +1,4 @@
 const pact = require('@pact-foundation/pact-node');
-
-if (!process.env.CI && !process.env.PUBLISH_PACT) {
-    console.log("skipping Pact publish...");
-    process.exit(0)
-}
-
 const pactBrokerUrl = process.env.PACT_BROKER_BASE_URL || 'https://verity.pactflow.io';
 const pactBrokerToken = process.env.PACT_BROKER_TOKEN || 'v_ieq2UfPtJpt1UEt9IsYQ';
 
