@@ -1,13 +1,7 @@
 const pact = require('@pact-foundation/pact-node')
 const path = require('path')
-const opts = {
-  pactUrls: [path.resolve(__dirname, '../pacts/matching_service-animal_profile_service.json')],
-  pactBroker: 'https://verity.pactflow.io',
-  //pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-  //pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
-  tags: ['prod', 'test'],
-  consumerVersion: '1.0.1'
-}
+const pactBrokerUrl = process.env.PACT_BROKER_BASE_URL || 'https://verity.pactflow.io';
+const pactBrokerToken = process.env.PACT_BROKER_TOKEN || 'v_ieq2UfPtJpt1UEt9IsYQ';
 
 pact.publishPacts(opts)
   .then(() => {
