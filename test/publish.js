@@ -2,9 +2,9 @@ const pact = require('@pact-foundation/pact-node')
 const path = require('path')
 const opts = {
   pactUrls: [path.resolve(__dirname, '../pacts/matching_service-animal_profile_service.json')],
-  pactBroker: 'https://test.pactflow.io',
-  pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-  pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
+  pactBroker: 'https://verity.pactflow.io',
+  //pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
+  //pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
   tags: ['prod', 'test'],
   consumerVersion: '1.0.1'
 }
