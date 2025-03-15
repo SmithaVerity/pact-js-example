@@ -43,20 +43,24 @@ describe('Pact Verification', () => {
 
     let opts = {
       providerBaseUrl: 'http://localhost:8081',
-      providerStatesUrl: 'http://localhost:8081/states',
-      providerStatesSetupUrl: 'http://localhost:8081/setup',
-      // Remote pacts
-      // pactUrls: ['https://test.pact.dius.com.au/pacts/provider/Animal%20Profile%20Service/consumer/Matching%20Service/latest'],
-      // Local pacts
-      pactUrls: [path.resolve(process.cwd(), './pacts/matching_service-animal_profile_service.json')],
-      pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-      pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1'
+      pactBrokerUrl: "https://verity.pactflow.io",
+      pactBrokerToken: "v_ieq2UfPtJpt1UEt9IsYQ",
+      publishVerificationResult: false,
+      providerVersionBranch: process.env.GIT_BRANCH ?? "master",
+      providerVersion: process.env.GIT_COMMIT ?? "1.0." + process.env.HOSTNAME,
+      consumerVersionSelectors: [
+        { mainBranch: true },
+        { deployedOrReleased: true }
+      ]
     }
 
     return verifier.verifyProvider(opts)
-      .then(output => {
-        console.log('Pact Verification Complete!')
-        console.log(output)
+      .then((output) => {
+        console.log("Pact Verification Complete!");
+        console.log(output);
       })
+      .catch((e) => {
+        console.error("Pact verification failed :(", e);
+      });
   })
 })
