@@ -1,4 +1,4 @@
-const pact = require('@pact-foundation/pact');
+const pact = require('@pact-foundation/pact-node');
 const pactBrokerUrl = process.env.PACT_BROKER_BASE_URL || 'https://verity.pactflow.io';
 const pactBrokerToken = process.env.PACT_BROKER_TOKEN || 'v_ieq2UfPtJpt1UEt9IsYQ';
 
